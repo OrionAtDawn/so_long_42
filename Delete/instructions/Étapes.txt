@@ -1,0 +1,16 @@
+1 : Parsing :
+	Check number of given arguments (needs only one)
+	Check file extension 
+	Check if file is empty
+	Check if map is rectangle
+		All lines equal
+		first line == Walls 
+		last line == Walls
+		All lines begin and end with Walls
+	Check if required elements are ok (1 player, 1 exit, collectables...)
+	Check if map is playable (move an object on the map until there is no unsisited slots or all collectables were found. Check if exit is reachable)
+	
+
+
+** E_INPUT == Error in Error in input.
+** E_MEM == Error occured on memory allocation.
