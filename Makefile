@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/25 09:20:30 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/25 14:12:25 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,9 @@ GNL_SRC = include/get_next_line/get_next_line.c \
 GNL_OBJ = $(GNL_SRC:.c=.o)
 
 SRCS = srcs/main.c \
-			srcs/check_map.c \
-			srcs/utils_checks.c \
-			srcs/visit_next_case.c \
+			srcs/check.c \
+			srcs/checks_utils.c \
+			srcs/check_utils_2.c \
 			 
 OBJS = $(SRCS:.c=.o)
 

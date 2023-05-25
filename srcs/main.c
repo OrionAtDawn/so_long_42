@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:54 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/25 09:23:05 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/25 14:14:07 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int	main(int argc, char **argv)
 	info.path = argv[1];
 	if (check_map(argv[1], &info) == -1)
 		return (1);
+	
 }
