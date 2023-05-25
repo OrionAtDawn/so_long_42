@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/25 14:12:25 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/25 14:43:52 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ RM = rm -f
 
 LIBFT = include/libft/libft.a
 LIBFT_PATH = include/libft/
+
+MLX = /mlx/libmlx.a
+MLX_PATH = include/mlx/
 
 GNL_SRC = include/get_next_line/get_next_line.c \
 			include/get_next_line/get_next_line_utils.c
@@ -34,14 +37,13 @@ all: 	$(NAME)
 
 $(NAME): $(OBJS) $(GNL_OBJ)
 	$(MAKE) -C $(LIBFT_PATH)
-	$(CC) $(CFLAGS)  -o $@ $^ $(LIBFT)
-# -L. -lmlx -framework OpenGL -framework AppKit 
+	$(CC) $(CFLAGS) -Imlx -o $@ $^ $(LIBFT) -L. -lmlx -framework OpenGL -framework AppKit
 
 clean:
 	@$(RM) $(OBJS) $(GNL_OBJ) 
 	@make -C $(LIBFT_PATH)  clean
 
 fclean:	clean
-	@$(RM) $(NAME) $(LIBFT) 
+	@$(RM) $(NAME) $(LIBFT) $(MLX) 
 
 re:		fclean all

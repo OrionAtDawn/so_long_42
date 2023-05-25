@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:22:03 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/25 14:22:23 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/25 14:36:17 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	create_map(t_data *info)
 	while (i_map < info->map_height)
 		info->map[i_map++] = get_next_line(info->fd);
 	info->map_lenght = ft_strlen(info->map[0]) - 1;
-	if (info->map_lenght < 3 || info->map > 40)
+	if (info->map_lenght < 3 || info->map_lenght > 40)
 		return (error_message("Map format invalid."));
 	return (0);
 }

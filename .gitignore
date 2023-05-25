@@ -54,6 +54,6 @@ dkms.conf
 #other
 .DS_Store
 *.ber
-*.xcf
+# .xcf
 so_long
 *.png
