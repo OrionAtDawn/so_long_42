@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/25 14:42:48 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/25 15:54:47 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdio.h> 
 # include "../mlx/mlx.h"
 # include "libft/libft.h"
-# include "get_next_line/get_next_line.h"
 
 //pos_x and 
 

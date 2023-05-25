@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:39:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/17 13:54:54 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/25 15:55:47 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h> // --> 	size_t, NULL ptr, malloc(), free()
 # include <unistd.h> // -->		size_t, NULL ptr, write()
 //# include <limits.h> // -->		MAX_INT, MIN_INT
+#include "get_next_line.h"
 
 /*Type definitions----------------------------------------------------------*/
 typedef struct s_list

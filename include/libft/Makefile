@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 10:57:31 by edufour           #+#    #+#              #
-#    Updated: 2023/05/17 13:29:04 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/25 15:56:07 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ SRCS	=	ft_isalpha.c \
 			ft_sizenb.c \
 			ft_safe_free.c \
 			ft_count_char_line.c \
+			get_next_line.c \
+			get_next_line_utils.c \
+			
 
 OBJCTS	=	$(SRCS:.c=.o)
 

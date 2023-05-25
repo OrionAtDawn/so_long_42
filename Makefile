@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/25 14:43:52 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/25 15:54:28 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,30 +20,30 @@ LIBFT = include/libft/libft.a
 LIBFT_PATH = include/libft/
 
 MLX = /mlx/libmlx.a
-MLX_PATH = include/mlx/
-
-GNL_SRC = include/get_next_line/get_next_line.c \
-			include/get_next_line/get_next_line_utils.c
-GNL_OBJ = $(GNL_SRC:.c=.o)
+MLX_PATH	=	mlx
 
 SRCS = srcs/main.c \
 			srcs/check.c \
 			srcs/checks_utils.c \
 			srcs/check_utils_2.c \
 			 
-OBJS = $(SRCS:.c=.o)
+OBJS		= 	${SRCS:.c=.o}
+
+.c.o:
+				@$(CC) $(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
 
 all: 	$(NAME)
 
-$(NAME): $(OBJS) $(GNL_OBJ)
+$(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT_PATH)
-	$(CC) $(CFLAGS) -Imlx -o $@ $^ $(LIBFT) -L. -lmlx -framework OpenGL -framework AppKit
+	$(MAKE) -C $(MLX_PATH) &> /dev/null
+				$(CC) $(OBJS) $(LIBFT) $(CFLAGS) mlx/libmlx.a -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	@$(RM) $(OBJS) $(GNL_OBJ) 
+	@$(RM) $(OBJS)
 	@make -C $(LIBFT_PATH)  clean
 
 fclean:	clean
-	@$(RM) $(NAME) $(LIBFT) $(MLX) 
+	@$(RM) $(NAME) $(LIBFT)
 
 re:		fclean all
