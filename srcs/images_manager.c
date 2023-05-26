@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_char_line.c                               :+:      :+:    :+:   */
+/*   images_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 13:25:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/26 14:48:39 by edufour          ###   ########.fr       */
+/*   Created: 2023/05/26 15:28:04 by edufour           #+#    #+#             */
+/*   Updated: 2023/05/26 15:28:18 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_count_char(char *line, char count)
+void	get_images(t_data &info)
 {
-	int	nb;
-	int	i;
-
-	i = 0;
-	nb = 0;
-	while (line[i])
-	{
-		if (line[i] == count)
-			nb++;
-		i++;
-	}
-	return (nb);
+		
 }

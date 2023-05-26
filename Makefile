@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/25 15:54:28 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/26 13:25:26 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS = srcs/main.c \
 			srcs/check.c \
 			srcs/checks_utils.c \
 			srcs/check_utils_2.c \
+			srcs/mlx_utils.c \
 			 
 OBJS		= 	${SRCS:.c=.o}
 
