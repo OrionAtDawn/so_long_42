@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:18:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/26 15:32:26 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/26 15:39:53 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,4 @@ int	exit_window(t_data *info)
 	mlx_destroy_window(info->mlx, info->mlx_win);
 	exit(0);
 	return(0);
-}
-
-void	get_images(t_data *info)
-{
-	info->ghost = mlx_xpm_file_to_image(info->mlx, \
-		"./sprites/character.xpm", &info->img_x, &info->img_y);
 }
