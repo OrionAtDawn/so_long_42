@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/26 15:31:47 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/27 16:54:38 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ typedef struct s_data
 	void	*img;
 	//images pointers
 	void	*ghost;
+	void	*floor;
+	void	*wall;
+	void	*collect;
+	void	*exit;
 	int		img_x;
 	int		img_y;
 }	t_data;
