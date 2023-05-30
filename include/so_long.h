@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/27 16:54:38 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 12:41:00 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include <stdio.h> 
+# include <stdio.h>
 # include "../mlx/mlx.h"
 # include "libft/libft.h"
 
@@ -38,6 +38,9 @@ typedef struct s_data
 	void	*img;
 	//images pointers
 	void	*ghost;
+	void	*ghost_left;
+	void	*ghost_front;
+	void	*ghost_back;
 	void	*floor;
 	void	*wall;
 	void	*collect;
@@ -65,5 +68,7 @@ char	**copy_map(t_data *info);
 void	window_init(t_data *info);
 int		keybinds(int keycode, t_data *info);
 int		exit_window(t_data *info);
+void	get_images(t_data *info);
+void	check_img(void);
 
 #endif

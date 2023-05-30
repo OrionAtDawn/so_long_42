@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/26 13:25:26 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/30 12:37:49 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,14 @@ LIBFT_PATH = include/libft/
 MLX = /mlx/libmlx.a
 MLX_PATH	=	mlx
 
-SRCS = srcs/main.c \
+SRCS = srcs/so_long.c \
 			srcs/check.c \
 			srcs/checks_utils.c \
 			srcs/check_utils_2.c \
 			srcs/mlx_utils.c \
+			srcs/player_move.c \
+			srcs/so_long_utils.c \
+			srcs/images_manager.c \
 			 
 OBJS		= 	${SRCS:.c=.o}
 
