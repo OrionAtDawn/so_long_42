@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:54 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 12:42:17 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:19:14 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	main(int argc, char **argv)
 	window_init(&info);
 	mlx_key_hook(info.mlx_win, keybinds, &info);
 	mlx_hook(info.mlx_win, 17, 0, exit_window, &info);
-	mlx_loop(info.mlx);
 	get_images(&info);
+	mlx_loop(info.mlx);
 }

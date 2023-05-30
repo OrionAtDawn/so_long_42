@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 12:41:00 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:15:13 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int		keybinds(int keycode, t_data *info);
 int		exit_window(t_data *info);
 void	get_images(t_data *info);
 void	check_img(void);
+void	put_images(t_data *info);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:18:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 12:39:27 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:17:53 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	keybinds(int keycode, t_data *info)
 		mlx_destroy_window(info->mlx, info->mlx_win);
 		exit(0);
 	}
-	// if (keycode == 0 || keycode == 123)
-	// {
-	// 	go_left;
-	// }
+	if (keycode == 0 || keycode == 123)
+	{
+		go_left;
+	}
 	// if (keycode == 2 || keycode == 124)
 	// {
 	// 	go_right;
