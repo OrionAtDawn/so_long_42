@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:28:04 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 15:18:34 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:40:04 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	check_img(void)
 		|| valid_fd("./assets/exit.xpm") == 1)
 	{
 		printf("An error with the textures file(s) occured.\n");
-		exit (0);
+		exit (1);
 	}
 }
 
 void	get_images(t_data *info)
 {
-	info->ghost = mlx_xpm_file_to_image(info->mlx, \
+	info->ghost_right = mlx_xpm_file_to_image(info->mlx, \
 		"./assets/character.xpm", &info->img_x, &info->img_y);
 	info->ghost_left = mlx_xpm_file_to_image(info->mlx, \
 		"./assets/character_left.xpm", &info->img_x, &info->img_y);
@@ -60,6 +60,7 @@ void	get_images(t_data *info)
 		"./assets/collectable.xpm", &info->img_x, &info->img_y);
 	info->exit = mlx_xpm_file_to_image(info->mlx, \
 		"./assets/exit.xpm", &info->img_x, &info->img_y);
+	info->ghost = info->ghost_front;
 	put_images(info);
 }
 

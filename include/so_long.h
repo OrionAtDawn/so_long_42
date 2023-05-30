@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 15:15:13 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:56:50 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,18 @@ typedef struct s_data
 	int		map_lenght;
 	int		collectables;
 	//player position
-	int		position_x;
-	int		position_y;
+	int		pos_x;
+	int		pos_y;
 	//mlx
 	void	*mlx;
 	void	*mlx_win;
 	void	*img;
 	//images pointers
-	void	*ghost;
+	void	*ghost_right;
 	void	*ghost_left;
 	void	*ghost_front;
 	void	*ghost_back;
+	void	*ghost;
 	void	*floor;
 	void	*wall;
 	void	*collect;
@@ -71,5 +72,9 @@ int		exit_window(t_data *info);
 void	get_images(t_data *info);
 void	check_img(void);
 void	put_images(t_data *info);
+void	go_right(t_data *info);
+void	go_left(t_data *info);
+void	go_up(t_data *info);
+void	go_down(t_data *info);
 
 #endif

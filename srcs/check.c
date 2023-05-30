@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:44 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/26 14:46:21 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/30 15:43:47 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,20 +93,20 @@ int	check_playable(t_data *info)
 		{	
 			if (info->map[i_map][i_line] == 'P')
 			{
-				info->position_x = i_map;
-				info->position_y = i_line;
+				info->pos_x = i_map;
+				info->pos_y = i_line;
 			}
 		}
 	}
 	map_copy = copy_map(info);
-	visit_next_case(info->map, info->position_y, info->position_x);
+	visit_next_case(info->map, info->pos_y, info->pos_x);
 	if (char_count_sl(info, 'C') != 0)
 		return (error_message("Cannot reach all collectables."));
 	if (char_count_sl(info, 'E') != 0)
 		return (error_message("Cannot reach exit."));
 	free(info->map);
 	info->map = map_copy;
-	return (1);
+	return (0);
 }
 
 int	check_map(char	*map_name, t_data *info)
