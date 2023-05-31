@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/30 15:56:50 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:45:12 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_data
 	int		map_height;
 	int		map_lenght;
 	int		collectables;
+	// int		moves;
 	//player position
 	int		pos_x;
 	int		pos_y;
