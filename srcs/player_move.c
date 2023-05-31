@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:17:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:45:37 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:04:51 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void	go_right(t_data *info)
 		if (info->map[info->pos_y][info->pos_x + 1] == 'E')
 		{	
 			if (info->collectables == 0)
+			{
+				exit_free(info);
 				exit(0);
+			}
 			else
 				return;
 		}
@@ -29,7 +32,8 @@ void	go_right(t_data *info)
 		info->map[info->pos_y][info->pos_x + 1] = 'P';
 		info->map[info->pos_y][info->pos_x] = '0';
 		info->pos_x += 1;
-		// info->moves++;
+		info->moves++;
+		printf("Moves : %d\n", info->moves);
 		put_images(info);
 	}
 }
@@ -43,7 +47,10 @@ void	go_left(t_data *info)
 		if (info->map[info->pos_y][info->pos_x - 1] == 'E')
 		{	
 			if (info->collectables == 0)
+			{
+				exit_free(info);
 				exit(0);
+			}
 			else
 				return;
 		}
@@ -51,7 +58,8 @@ void	go_left(t_data *info)
 		info->map[info->pos_y][info->pos_x - 1] = 'P';
 		info->map[info->pos_y][info->pos_x] = '0';
 		info->pos_x -= 1;
-		// info->moves++;
+		info->moves++;
+		printf("Moves : %d\n", info->moves);
 		put_images(info);
 	}
 }
@@ -65,7 +73,10 @@ void	go_down(t_data *info)
 		if (info->map[info->pos_y + 1][info->pos_x] == 'E')
 		{	
 			if (info->collectables == 0)
+			{
+				exit_free(info);
 				exit(0);
+			}
 			else
 				return;
 		}
@@ -73,7 +84,8 @@ void	go_down(t_data *info)
 		info->map[info->pos_y + 1][info->pos_x] = 'P';
 		info->map[info->pos_y][info->pos_x] = '0';
 		info->pos_y += 1;
-		// info->moves++;
+		info->moves++;
+		printf("Moves : %d\n", info->moves);
 		put_images(info);
 	}
 }
@@ -87,7 +99,10 @@ void	go_up(t_data *info)
 		if (info->map[info->pos_y - 1][info->pos_x] == 'E')
 		{	
 			if (info->collectables == 0)
+			{
+				exit_free(info);
 				exit(0);
+			}
 			else
 				return;
 		}
@@ -95,7 +110,8 @@ void	go_up(t_data *info)
 		info->map[info->pos_y - 1][info->pos_x] = 'P';
 		info->map[info->pos_y][info->pos_x] = '0';
 		info->pos_y -= 1;
-		// info->moves++;
+		info->moves++;
+		printf("Moves : %d\n", info->moves);
 		put_images(info);
 	}
 }

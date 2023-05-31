@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:54 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:46:32 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:09:23 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	variables_init(t_data *info)
 	info->map_lenght = 0;
 	info->pos_x = 0;
 	info->pos_y = 0;
-	// info->moves = 0;
+	info->moves = 0;
 }
 
 int	main(int argc, char **argv)
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 
 	variables_init(&info);
 	if (argc != 2)
-		return (error_message("No file was provided."));
+		return (error_message("No file was provided.", &info));
 	info.path = argv[1];
 	if (check_map(argv[1], &info) != 0)
 		return (1);

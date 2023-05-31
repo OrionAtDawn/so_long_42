@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/30 12:37:49 by edufour          ###   ########.fr        #
+#    Updated: 2023/05/31 15:52:11 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,3 +51,6 @@ fclean:	clean
 	@$(RM) $(NAME) $(LIBFT)
 
 re:		fclean all
+
+exec: re
+	./$(NAME) "test.ber"

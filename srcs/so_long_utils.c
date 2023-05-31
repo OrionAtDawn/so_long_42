@@ -6,8 +6,29 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:16:51 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:36:36 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:09:51 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	exit_free(t_data *info)
+{
+	int	i_map;
+
+	i_map = 0;
+	while (i_map < info->map_height)
+	{		
+		if (info->map[i_map])
+			{	
+				free (info->map[i_map]);
+				info->map[i_map] = NULL;
+			}
+		i_map++;
+	}
+	if(info->map)
+	{	
+		free(info->map);
+		info->map = NULL;
+	}
+}

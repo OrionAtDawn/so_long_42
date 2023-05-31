@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:45:12 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:06:37 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_data
 	int		map_height;
 	int		map_lenght;
 	int		collectables;
-	// int		moves;
+	int		moves;
 	//player position
 	int		pos_x;
 	int		pos_y;
@@ -52,7 +52,7 @@ typedef struct s_data
 }	t_data;
 
 //Parsing
-int		error_message(char *error);
+int		error_message(char *error, t_data *info);
 int		check_elements(t_data *info);
 int		check_walls(t_data *info);
 int		check_playable(t_data *info);
@@ -77,5 +77,7 @@ void	go_right(t_data *info);
 void	go_left(t_data *info);
 void	go_up(t_data *info);
 void	go_down(t_data *info);
+
+void	exit_free(t_data *info);
 
 #endif

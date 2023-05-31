@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:44 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:34:09 by edufour          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:08:04 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	check_file(char *map_name, t_data *info)
 	i = ft_strlen(map_name);
 	if (i < 4 || map_name[--i] != 'r' || map_name[--i] != 'e'
 		|| map_name[--i] != 'b' || map_name[--i] != '.')
-		return (error_message("Wrong file extension."));
+		return (error_message("Wrong file extension.", info));
 	info->fd = open(info->path, O_RDONLY);
 	if (info->fd < 1)
 	{
 		close (info->fd);
-		return (error_message("Invalid file."));
+		return (error_message("Invalid file.", info));
 	}
 	return (0);
 }
@@ -47,14 +47,14 @@ int	check_elements(t_data *info)
 				&& info->map[i_map][i_line] != 'P'
 				&& info->map[i_map][i_line] != '\0'
 				&& info->map[i_map][i_line] != '\n')
-				return (error_message("Unknown element found."));
+				return (error_message("Unknown element found.", info));
 			i_line ++;
 		}
 		i_map++;
 	}
 	if (char_count_sl(info, 'P') != 1 || char_count_sl(info, 'C') < 1
 		|| char_count_sl(info, 'E') != 1)
-		return (error_message("Number of elements invalid."));
+		return (error_message("Number of elements invalid.", info));
 	info->collectables = char_count_sl(info, 'C');
 	return (0);
 }
@@ -66,16 +66,16 @@ int	check_walls(t_data *info)
 
 	i_line = 0;
 	if (compare_lenght(info) != 0)
-		return (error_message("Map isn't rectangular."));
+		return (error_message("Map isn't rectangular.", info));
 	if (ft_count_char(info->map[0], '1') != info->map_lenght
 		|| ft_count_char(info->map[info->map_height - 1], '1')
 		!= info->map_lenght)
-		return (error_message("Map is not closed with walls."));
+		return (error_message("Map is not closed with walls.", info));
 	i_map = 0;
 	while (i_map < info->map_height)
 		if (info->map[i_map][0] != '1'
 		|| info->map[i_map++][info->map_lenght - 1] != '1')
-			return (error_message("Map is not closed with walls."));
+			return (error_message("Map is not closed with walls.", info));
 	return (0);
 }
 
@@ -101,9 +101,9 @@ int	check_playable(t_data *info)
 	map_copy = copy_map(info);
 	visit_next_case(info->map, info->pos_x, info->pos_y);
 	if (char_count_sl(info, 'C') != 0)
-		return (error_message("Cannot reach all collectables."));
+		return (error_message("Cannot reach all collectables.", info));
 	if (char_count_sl(info, 'E') != 0)
-		return (error_message("Cannot reach exit."));
+		return (error_message("Cannot reach exit.", info));
 	free(info->map);
 	info->map = map_copy;
 	return (0);
