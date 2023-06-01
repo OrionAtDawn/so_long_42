@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 16:06:37 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:11:49 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		check_map(char	*map_name, t_data *info);
 
 int		create_map(t_data *info);
 
-void	count_nb_lines(t_data *info);
+int		count_nb_lines(t_data *info);
 int		char_count_sl(t_data *info, char find);
 int		compare_lenght(t_data *info);
 void	visit_next_case(char **map, int y, int x);

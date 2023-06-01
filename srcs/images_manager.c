@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:28:04 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 15:50:34 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/01 12:47:14 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	check_img(void)
 		|| valid_fd("./assets/collectable.xpm") == 1
 		|| valid_fd("./assets/exit.xpm") == 1)
 	{
-		printf("An error with the textures file(s) occured.\n");
+		printf("Something is wrong with the texture file(s).\n");
 		exit (1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:54 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 16:09:23 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:17:05 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	variables_init(t_data *info)
 	info->pos_x = 0;
 	info->pos_y = 0;
 	info->moves = 0;
+	info->map = NULL;
 }
 
 int	main(int argc, char **argv)
