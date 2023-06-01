@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:17:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/31 16:04:51 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/01 09:15:49 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	go_right(t_data *info)
 		{	
 			if (info->collectables == 0)
 			{
+				info->moves++;
+				printf("Moves : %d\n", info->moves);
 				exit_free(info);
 				exit(0);
 			}
@@ -48,6 +50,8 @@ void	go_left(t_data *info)
 		{	
 			if (info->collectables == 0)
 			{
+				info->moves++;
+				printf("Moves : %d\n", info->moves);
 				exit_free(info);
 				exit(0);
 			}
@@ -74,6 +78,8 @@ void	go_down(t_data *info)
 		{	
 			if (info->collectables == 0)
 			{
+				info->moves++;
+				printf("Moves : %d\n", info->moves);
 				exit_free(info);
 				exit(0);
 			}
@@ -100,6 +106,8 @@ void	go_up(t_data *info)
 		{	
 			if (info->collectables == 0)
 			{
+				info->moves++;
+				printf("Moves : %d\n", info->moves);
 				exit_free(info);
 				exit(0);
 			}
