@@ -6,7 +6,7 @@
 #    By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:20:57 by tbeaudoi          #+#    #+#              #
-#    Updated: 2023/05/31 15:52:11 by edufour          ###   ########.fr        #
+#    Updated: 2023/06/02 11:18:05 by edufour          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ MLX_PATH	=	mlx
 SRCS = srcs/so_long.c \
 			srcs/check.c \
 			srcs/checks_utils.c \
-			srcs/check_utils_2.c \
 			srcs/mlx_utils.c \
 			srcs/player_move.c \
 			srcs/so_long_utils.c \

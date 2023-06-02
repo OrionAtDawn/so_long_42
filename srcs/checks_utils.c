@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:22:03 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/01 14:17:17 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:16:24 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,20 @@ int	count_nb_lines(t_data *info)
 	return (0);
 }
 
-int	create_map(t_data *info)
+void	visit_next_case(char **map, int x, int y)
 {
-	int	i_map;
-
-	if (count_nb_lines(info) != 0 || \
-		info->map_height < 3 || info->map_height > 30)
-		return (error_message("Map format invalid.", info));
-	info->map = ft_calloc(info->map_height, sizeof(char *));
-	i_map = 0;
-	open(info->path, O_RDONLY);
-	while (i_map < info->map_height)
-		info->map[i_map++] = get_next_line(info->fd);
-	info->map_lenght = ft_strlen(info->map[0]) - 1;
-	if (info->map_lenght < 3 || info->map_lenght > 40)
-		return (error_message("Map format invalid.", info));
-	return (0);
+	map[y][x] = 'V';
+	if (map[y - 1][x] != '1' && map[y - 1][x] != 'V')
+		visit_next_case(map, x, y - 1);
+	if (map[y + 1][x] != '1' && map[y + 1][x] != 'V')
+		visit_next_case(map, x, y + 1);
+	if (map[y][x - 1] != '1' && map[y][x - 1] != 'V')
+		visit_next_case(map, x - 1, y);
+	if (map[y][x + 1] != '1' && map[y][x + 1] != 'V')
+		visit_next_case(map, x + 1, y);
 }
 
-int	char_count_sl(t_data *info, char find)
+int	char_count_sl(char **map, t_data *info, char find)
 {
 	int	i_map;
 	int	i_line;
@@ -65,7 +60,7 @@ int	char_count_sl(t_data *info, char find)
 		i_line = 0;
 		while (i_line < info->map_lenght)
 		{	
-			if (info->map[i_map][i_line] == find)
+			if (map[i_map][i_line] == find)
 				count ++;
 			i_line++;
 		}
@@ -74,11 +69,10 @@ int	char_count_sl(t_data *info, char find)
 	return (count);
 }
 
-int	error_message(char *error, t_data *info)
+void	error_message(char *error, t_data *info)
 {
-	exit_free(info);
 	printf("Error\n%s\n", error);
-	return (1);
+	exit_free(NULL, info);
 }
 
 int	compare_lenght(t_data *info)

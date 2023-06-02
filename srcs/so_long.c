@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:54 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/01 14:17:05 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:52:07 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	variables_init(t_data *info)
 	info->pos_y = 0;
 	info->moves = 0;
 	info->map = NULL;
+	info->map_copy = NULL;
+	info->exit_flag = '0';
 }
 
 int	main(int argc, char **argv)
@@ -30,10 +32,9 @@ int	main(int argc, char **argv)
 
 	variables_init(&info);
 	if (argc != 2)
-		return (error_message("No file was provided.", &info));
+		error_message("No file was provided.", &info);
 	info.path = argv[1];
-	if (check_map(argv[1], &info) != 0)
-		return (1);
+	check_map(argv[1], &info);
 	check_img();
 	window_init(&info);
 	mlx_key_hook(info.mlx_win, keybinds, &info);

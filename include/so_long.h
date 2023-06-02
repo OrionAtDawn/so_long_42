@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/01 14:11:49 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 12:51:51 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ typedef struct s_data
 {
 	//map info
 	char	**map;
+	char	**map_copy;
 	char	*path;
 	int		fd;
 	int		map_height;
 	int		map_lenght;
 	int		collectables;
 	int		moves;
+	char	exit_flag;
 	//player position
 	int		pos_x;
 	int		pos_y;
@@ -52,17 +54,17 @@ typedef struct s_data
 }	t_data;
 
 //Parsing
-int		error_message(char *error, t_data *info);
-int		check_elements(t_data *info);
-int		check_walls(t_data *info);
-int		check_playable(t_data *info);
-int		check_file(char *map_name, t_data *info);
-int		check_map(char	*map_name, t_data *info);
+void	error_message(char *error, t_data *info);
+void	check_elements(t_data *info);
+void	check_walls(t_data *info);
+void	check_playable(t_data *info);
+void	check_file(char *map_name, t_data *info);
+void	check_map(char	*map_name, t_data *info);
 
-int		create_map(t_data *info);
+void	create_map(t_data *info);
 
 int		count_nb_lines(t_data *info);
-int		char_count_sl(t_data *info, char find);
+int		char_count_sl(char **map, t_data *info, char find);
 int		compare_lenght(t_data *info);
 void	visit_next_case(char **map, int y, int x);
 char	**copy_map(t_data *info);
@@ -78,6 +80,6 @@ void	go_left(t_data *info);
 void	go_up(t_data *info);
 void	go_down(t_data *info);
 
-void	exit_free(t_data *info);
+void	exit_free(char ***tab, t_data *info);
 
 #endif
