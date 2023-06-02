@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:18:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 11:09:15 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:18:02 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	keybinds(int keycode, t_data *info)
 	if (keycode == 53)
 	{
 		mlx_destroy_window(info->mlx, info->mlx_win);
-		exit_free(NULL, info);
+		exit_free(info);
 	}
 	if (keycode == 0 || keycode == 123)
 	{
@@ -48,5 +48,5 @@ int	keybinds(int keycode, t_data *info)
 int	exit_window(t_data *info)
 {
 	mlx_destroy_window(info->mlx, info->mlx_win);
-	return (exit_free(NULL, info), 0);
+	return (exit_free(info), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:17:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 10:27:56 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:17:51 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	go_right(t_data *info)
 			{
 				info->moves++;
 				printf("Moves : %d\n", info->moves);
-				exit_free(NULL, info);
+				exit_free(info);
 			}
 			else
 				return;
@@ -51,7 +51,7 @@ void	go_left(t_data *info)
 			{
 				info->moves++;
 				printf("Moves : %d\n", info->moves);
-				exit_free(NULL, info);
+				exit_free(info);
 			}
 			else
 				return;
@@ -78,7 +78,7 @@ void	go_down(t_data *info)
 			{
 				info->moves++;
 				printf("Moves : %d\n", info->moves);
-				exit_free(NULL, info);
+				exit_free(info);
 			}
 			else
 				return;
@@ -105,7 +105,7 @@ void	go_up(t_data *info)
 			{
 				info->moves++;
 				printf("Moves : %d\n", info->moves);
-				exit_free(NULL, info);
+				exit_free(info);
 			}
 			else
 				return;

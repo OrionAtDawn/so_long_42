@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:22:03 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 11:16:24 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:17:31 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	char_count_sl(char **map, t_data *info, char find)
 void	error_message(char *error, t_data *info)
 {
 	printf("Error\n%s\n", error);
-	exit_free(NULL, info);
+	exit_free(info);
 }
 
 int	compare_lenght(t_data *info)

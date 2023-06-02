@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 12:51:51 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:17:18 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	go_left(t_data *info);
 void	go_up(t_data *info);
 void	go_down(t_data *info);
 
-void	exit_free(char ***tab, t_data *info);
+void	exit_free(t_data *info);
 
 #endif
