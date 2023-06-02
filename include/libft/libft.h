@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:39:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/05/25 15:55:47 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 15:23:58 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
 int		ft_count_char(char *line, char count);
+int		check_char(char *str, char check);
 
 //Strings
 size_t	ft_strlen(const char *s);

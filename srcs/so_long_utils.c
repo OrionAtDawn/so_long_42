@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:16:51 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:30:51 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:50:03 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	create_map(t_data *info)
 
 char	**copy_map(t_data *info)
 {
-	char **new_map;
-	int	i;
+	char	**new_map;
+	int		i;
 
 	new_map = ft_calloc(info->map_height + 1, sizeof(char *));
 	i = -1;

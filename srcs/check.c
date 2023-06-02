@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:44 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:31:40 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 15:38:26 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,15 @@ void	check_elements(t_data *info)
 	int	i_map;
 	int	i_line;
 
-	i_map = 0;
-	while (i_map < info->map_height)
+	i_map = -1;
+	while (++i_map < info->map_height)
 	{
-		i_line = 0;
-		while (i_line < info->map_lenght)
+		i_line = -1;
+		while (++i_line < info->map_lenght)
 		{	
-			if (info->map[i_map][i_line] != '0'
-				&& info->map[i_map][i_line] != '1'
-				&& info->map[i_map][i_line] != 'C'
-				&& info->map[i_map][i_line] != 'E'
-				&& info->map[i_map][i_line] != 'P'
-				&& info->map[i_map][i_line] != '\0'
-				&& info->map[i_map][i_line] != '\n')
+			if (check_char("01EPC\n\0", info->map[i_map][i_line]) != 0)
 				error_message("Unknown element found.", info);
-			i_line ++;
 		}
-		i_map++;
 	}
 	if (char_count_sl(info->map, info, 'P') != 1
 		|| char_count_sl(info->map, info, 'C') < 1
