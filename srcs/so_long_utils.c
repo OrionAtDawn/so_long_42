@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:16:51 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:26:52 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:30:51 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,44 +47,6 @@ void	exit_free(t_data *info)
 	exit (0);
 }
 
-// void	exit_free(char ***tab, t_data *info)
-// {
-// 	int	i_map;
-
-// 	(void)tab;
-	// i_map = 0;
-	// while (info->map)
-	// {	
-	// 	while (i_map < info->map_height)
-	// 	{		
-	// 		if (info->map[i_map])
-	// 			{	
-	// 				free (info->map[i_map]);
-	// 				info->map[i_map] = NULL;
-	// 			}
-	// 		i_map++;
-	// 	}
-	// free(info->map);
-	// info->map = NULL;
-	// }
-// 	i_map = 0;
-// 	while (info->map_copy)
-// 	{	
-// 		while (i_map < info->map_height)
-// 		{		
-// 			if (info->map_copy[i_map])
-// 				{	
-// 					free (info->map_copy[i_map]);
-// 					info->map_copy[i_map] = NULL;
-// 				}
-// 			i_map++;
-// 		}
-// 	free(info->map_copy);
-// 	info->map_copy = NULL;
-// 	}
-// 	exit (0);
-// }
-
 void	create_map(t_data *info)
 {
 	int	i_map;
@@ -108,7 +70,7 @@ char	**copy_map(t_data *info)
 	char **new_map;
 	int	i;
 
-	new_map = ft_calloc(info->map_height, sizeof(char *));
+	new_map = ft_calloc(info->map_height + 1, sizeof(char *));
 	i = -1;
 	while (++i < info->map_height)
 		new_map[i] = ft_strdup(info->map[i]);

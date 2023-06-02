@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:44 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 10:58:26 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/02 13:31:40 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	check_elements(t_data *info)
 		}
 		i_map++;
 	}
-	if (char_count_sl(info->map, info, 'P') != 1 || char_count_sl(info->map, info, 'C') < 1
+	if (char_count_sl(info->map, info, 'P') != 1
+		|| char_count_sl(info->map, info, 'C') < 1
 		|| char_count_sl(info->map, info, 'E') != 1)
 		error_message("Number of elements invalid.", info);
 	info->collectables = char_count_sl(info->map, info, 'C');
