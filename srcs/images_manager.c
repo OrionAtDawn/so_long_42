@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:28:04 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/01 12:47:14 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:11:39 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	get_images(t_data *info)
 		"./assets/wall.xpm", &info->img_x, &info->img_y);
 	info->collect = mlx_xpm_file_to_image(info->mlx, \
 		"./assets/collectable.xpm", &info->img_x, &info->img_y);
-	info->exit = mlx_xpm_file_to_image(info->mlx, \
+	info->exit_hold = mlx_xpm_file_to_image(info->mlx, \
 		"./assets/exit.xpm", &info->img_x, &info->img_y);
 	info->ghost = info->ghost_front;
+	info->exit = info->floor;
 	put_images(info);
 }
 

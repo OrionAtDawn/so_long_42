@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:17:18 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:10:54 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_data
 	void	*floor;
 	void	*wall;
 	void	*collect;
+	void	*exit_hold;
 	void	*exit;
 	int		img_x;
 	int		img_y;

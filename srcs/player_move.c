@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:17:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:38:55 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:14:25 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	go_right(t_data *info)
 {
 	if (info->map[info->pos_y][info->pos_x + 1] != '1')
 	{	
+		if (info->collectables == 0)
+			info->exit = info->exit_hold;
 		if (info->map[info->pos_y][info->pos_x + 1] == 'C')
 			info->collectables--;
 		if (info->map[info->pos_y][info->pos_x + 1] == 'E')
@@ -43,6 +45,8 @@ void	go_right(t_data *info)
 
 void	go_left(t_data *info)
 {
+	if (info->collectables == 0)
+			info->exit = info->exit_hold;
 	if (info->map[info->pos_y][info->pos_x - 1] != '1')
 	{	
 		if (info->map[info->pos_y][info->pos_x - 1] == 'C')
@@ -72,6 +76,8 @@ void	go_left(t_data *info)
 
 void	go_down(t_data *info)
 {
+	if (info->collectables == 0)
+			info->exit = info->exit_hold;
 	if (info->map[info->pos_y + 1][info->pos_x] != '1')
 	{	
 		if (info->map[info->pos_y + 1][info->pos_x] == 'C')
@@ -101,6 +107,8 @@ void	go_down(t_data *info)
 
 void	go_up(t_data *info)
 {
+	if (info->collectables == 0)
+			info->exit = info->exit_hold;
 	if (info->map[info->pos_y - 1][info->pos_x] != '1')
 	{	
 		if (info->map[info->pos_y - 1][info->pos_x] == 'C')
