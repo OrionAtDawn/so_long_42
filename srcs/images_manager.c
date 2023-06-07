@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:28:04 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/05 11:11:39 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 11:35:22 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,32 +65,37 @@ void	get_images(t_data *info)
 	put_images(info);
 }
 
+void	put_element(t_data *info, int i_line, int i_map, char element)
+{
+	if (element == 'P')
+		mlx_put_image_to_window(info->mlx, info->mlx_win,
+			info->ghost, i_line * 64, i_map * 64);
+	else if (element == '0')
+		mlx_put_image_to_window(info->mlx, info->mlx_win,
+			info->floor, i_line * 64, i_map * 64);
+	else if (element == '1')
+		mlx_put_image_to_window(info->mlx, info->mlx_win,
+			info->wall, i_line * 64, i_map * 64);
+	else if (element == 'C')
+		mlx_put_image_to_window(info->mlx, info->mlx_win,
+			info->collect, i_line * 64, i_map * 64);
+	else if (element == 'E')
+		mlx_put_image_to_window(info->mlx, info->mlx_win,
+			info->exit, i_line * 64, i_map * 64);
+}
+
 void	put_images(t_data *info)
 {
 	int	i_map;
 	int	i_line;
 
 	i_map = 0;
-	while(i_map < info->map_height)
+	while (i_map < info->map_height)
 	{	
 		i_line = 0;
 		while (i_line < info->map_lenght)
 		{	
-			if(info->map[i_map][i_line] == 'P')
-				mlx_put_image_to_window(info->mlx, info->mlx_win, \
-					info->ghost, i_line*64, i_map*64);
-			else if(info->map[i_map][i_line] == '0')
-				mlx_put_image_to_window(info->mlx, info->mlx_win, \
-					info->floor, i_line*64, i_map*64);
-			else if(info->map[i_map][i_line] == '1')
-				mlx_put_image_to_window(info->mlx, info->mlx_win, \
-					info->wall, i_line*64, i_map*64);
-			else if(info->map[i_map][i_line] == 'C')
-				mlx_put_image_to_window(info->mlx, info->mlx_win, \
-					info->collect, i_line*64, i_map*64);
-			else if(info->map[i_map][i_line] == 'E')
-				mlx_put_image_to_window(info->mlx, info->mlx_win, \
-					info->exit, i_line*64, i_map*64);
+			put_element(info, i_line, i_map, info->map[i_map][i_line]);
 			i_line++;
 		}
 		i_map++;

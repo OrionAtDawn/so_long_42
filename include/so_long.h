@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/05 11:10:54 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 09:47:08 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 typedef struct s_data
 {
-	//map info
 	char	**map;
 	char	**map_copy;
 	char	*path;
@@ -32,14 +31,16 @@ typedef struct s_data
 	int		collectables;
 	int		moves;
 	char	exit_flag;
-	//player position
+
 	int		pos_x;
 	int		pos_y;
-	//mlx
+
 	void	*mlx;
 	void	*mlx_win;
 	void	*img;
-	//images pointers
+	int		img_x;
+	int		img_y;
+
 	void	*ghost_right;
 	void	*ghost_left;
 	void	*ghost_front;
@@ -49,9 +50,7 @@ typedef struct s_data
 	void	*wall;
 	void	*collect;
 	void	*exit_hold;
-	void	*exit;
-	int		img_x;
-	int		img_y;
+	void	*exit;	
 }	t_data;
 
 //Parsing

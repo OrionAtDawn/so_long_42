@@ -6,17 +6,17 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:18:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/02 13:18:02 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 11:36:45 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void window_init(t_data *info)
+void	window_init(t_data *info)
 {
 	info->mlx = mlx_init();
-	info->mlx_win = mlx_new_window(info->mlx, info->map_lenght * 64, 
-		info->map_height * 64, "./so_long");
+	info->mlx_win = mlx_new_window(info->mlx, info->map_lenght * 64,
+			info->map_height * 64, "./so_long");
 }
 
 int	keybinds(int keycode, t_data *info)
