@@ -6,11 +6,21 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:18:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/07 11:36:45 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 11:49:16 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	move_on_screen(t_data *info)
+{
+	char	*nbmv;
+
+	nbmv = ft_itoa(info->moves);
+	mlx_string_put(info->mlx, info->mlx_win, 62, 60, 0x000000FF, "Moves: ");
+	mlx_string_put(info->mlx, info->mlx_win, 125, 60, 0x000000FF, nbmv);
+	free(nbmv);
+}
 
 void	window_init(t_data *info)
 {

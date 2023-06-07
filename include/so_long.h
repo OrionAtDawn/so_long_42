@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 09:21:30 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/07 09:47:08 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 11:50:03 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int		char_count_sl(char **map, t_data *info, char find);
 int		compare_lenght(t_data *info);
 void	visit_next_case(char **map, int y, int x);
 char	**copy_map(t_data *info);
+void	move_on_screen(t_data *info);
 //mlx
 void	window_init(t_data *info);
 int		keybinds(int keycode, t_data *info);

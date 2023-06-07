@@ -6,7 +6,7 @@
 /*   By: edufour <edufour@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:17:01 by edufour           #+#    #+#             */
-/*   Updated: 2023/06/07 11:25:58 by edufour          ###   ########.fr       */
+/*   Updated: 2023/06/07 11:55:13 by edufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	win_game(t_data *info)
 {
 	info->moves++;
-	printf("Moves : %d\n", info->moves);
+	move_on_screen(info);
 	exit_free(info);
 }
 
@@ -37,7 +37,6 @@ void	go_right(t_data *info)
 		info->map[info->pos_y][info->pos_x + 1] = 'P';
 		info->pos_x += 1;
 		info->moves++;
-		printf("Moves : %d\n", info->moves);
 		if (info->collectables == 0)
 			info->exit = info->exit_hold;
 		put_images(info);
@@ -62,7 +61,6 @@ void	go_left(t_data *info)
 		info->map[info->pos_y][info->pos_x - 1] = 'P';
 		info->pos_x -= 1;
 		info->moves++;
-		printf("Moves : %d\n", info->moves);
 		if (info->collectables == 0)
 			info->exit = info->exit_hold;
 		put_images(info);
@@ -87,7 +85,6 @@ void	go_down(t_data *info)
 		info->map[info->pos_y + 1][info->pos_x] = 'P';
 		info->pos_y += 1;
 		info->moves++;
-		printf("Moves : %d\n", info->moves);
 		if (info->collectables == 0)
 			info->exit = info->exit_hold;
 		put_images(info);
@@ -112,7 +109,6 @@ void	go_up(t_data *info)
 		info->map[info->pos_y - 1][info->pos_x] = 'P';
 		info->pos_y -= 1;
 		info->moves++;
-		printf("Moves : %d\n", info->moves);
 		if (info->collectables == 0)
 			info->exit = info->exit_hold;
 		put_images(info);
