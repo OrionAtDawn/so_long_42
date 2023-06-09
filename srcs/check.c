@@ -53,9 +53,7 @@ void	check_elements(t_data *info)
 void	check_walls(t_data *info)
 {
 	int	i_map;
-	int	i_line;
 
-	i_line = 0;
 	if (compare_lenght(info) != 0)
 		error_message("Map isn't rectangular.", info);
 	if (ft_count_char(info->map[0], '1') != info->map_lenght

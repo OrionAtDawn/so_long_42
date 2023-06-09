@@ -45,8 +45,6 @@ void	*ft_calloc_gnl(size_t nb, size_t size)
 	char	*buffer;
 	size_t	i;
 
-	if (nb < 0 || size < 0)
-		return (NULL);
 	buffer = malloc (nb * size);
 	if (!buffer)
 		return (NULL);
